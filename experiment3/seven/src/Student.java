@@ -91,7 +91,6 @@ public class Student {
     public static Student[] readStudentsFromFile(String fileName) throws FileNotFoundException {
         ArrayList<Student> students = new ArrayList<>();
         Scanner in = new Scanner(new File(fileName));
-        in.nextLine();
         while(in.hasNextLine()){//判断扫描器是否还有下一行未读取，该循环把文件的每一行都读出
             String line = in.nextLine();//读出myfile.txt的下一行
             Scanner lineScanner = new Scanner(line);//对每一行的内容建立一个扫描器
