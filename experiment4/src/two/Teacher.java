@@ -40,6 +40,11 @@ public class Teacher extends Staff{
         return postAllowancec;
     }
 
+    @Override
+    public int getSalary() {
+        return super.getSalary()+this.getPostAllowancec();
+    }
+
     public void setPostAllowancec(int postAllowancec) {
         this.postAllowancec = postAllowancec;
     }
