@@ -34,50 +34,15 @@ public class TestSraff {
     }
     private static void printSalary(Staff[] staffs){
         for(Staff element: staffs){
-            int salary=0;
-            if(element instanceof Dean){
-                Dean tmp = (Dean)element;
-                salary=tmp.getSalary()+tmp.getAdminAward()+tmp.getPostAllowancec();
-            }
-            else if(element instanceof Teacher ){
-                Teacher tmp = (Teacher)element;
-                salary = tmp.getSalary()+ tmp.getPostAllowancec();
-            }
-            else if(element instanceof SecurityGuard){
-                SecurityGuard tmp = (SecurityGuard)element;
-                salary = tmp.getSalary()+tmp.getDangerousAllowance();
-            }
-            else {
-                salary = element.getSalary();
-            }
-            System.out.println("salary:"+salary);
+
+            System.out.println("salary:"+element.getSalary());
 
         }
-    }
-    private static int getSalary(Staff staff){
-        Staff element =  staff;
-        int salary=0;
-        if(element instanceof Dean){
-            Dean tmp = (Dean)element;
-            salary=tmp.getSalary()+tmp.getAdminAward()+tmp.getPostAllowancec();
-        }
-        else if(element instanceof Teacher ){
-            Teacher tmp = (Teacher)element;
-            salary = tmp.getSalary()+ tmp.getPostAllowancec();
-        }
-        else if(element instanceof SecurityGuard){
-            SecurityGuard tmp = (SecurityGuard)element;
-            salary = tmp.getSalary()+tmp.getDangerousAllowance();
-        }
-        else {
-            salary = element.getSalary();
-        }
-        return salary;
     }
     private static void sortBySalary(Staff[] staffs){
         for(int i = 0;i<staffs.length;i++){
             for(int j = 0;j<staffs.length-1;j++){
-                if(getSalary(staffs[j])<getSalary(staffs[j+1])){
+                if(staffs[j].getSalary()<staffs[j+1].getSalary()){
                     Staff tmp = staffs[j];
                     staffs[j] = staffs[j+1];
                     staffs[j+1] = tmp;
