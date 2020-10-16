@@ -18,7 +18,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if(age<0&&age>140){
+        if(age<0||age>140){
             System.out.println("error");
             return;
         }
